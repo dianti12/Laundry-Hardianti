@@ -10,7 +10,7 @@ if (mysqli_num_rows($getOrderCodeQuery) > 0) {
 } else {
     $orderCodeID = 0;
 }
-$orderCode = "CRD-" . date('YmdHis') . $orderCodeID + 1;
+$orderCode = "ANJAY-" . date('YmdHis') . $orderCodeID + 1;
 
 if (isset($_POST['add_order'])) {
     $id_customer = $_POST['id_customer'];
@@ -215,7 +215,7 @@ $queryCustomer = mysqli_query($config,  "SELECT * FROM customer");
                 <hr>
                 <div class="mb-3" align="right">
                     <button class="btn btn-secondary" id="add_row_order">
-                        <i class="bx bx-plus">tambah</i>
+                        <i class="bx bx-plus">Add</i>
                     </button>
                 </div>
                 <table class="table table-responsive table-bordered table-striped mb-3">

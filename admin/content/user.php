@@ -14,7 +14,7 @@ $queryData = mysqli_query($config, "SELECT user.id, user.username, user.email, l
         <table class="table table-bordered table-striped table-hover table-responsive mt-3">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No</th>
                     <th>Level</th>
                     <th>Full Nama</th>
                     <th>Email</th>

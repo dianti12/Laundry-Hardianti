@@ -12,55 +12,63 @@ if (isset($_GET['delete'])) {
     $queryEdit = mysqli_query($config, "SELECT * FROM customer WHERE id='$idEdit'");
     $rowEdit = mysqli_fetch_assoc($queryEdit);
     if (isset($_POST['edit'])) {
-        $customer = $_POST['customer'];
+        $customer_name = $_POST['customer_name'];
         $phone  = $_POST['phone'];
         $address = $_POST['address'];
 
-
-        $queryEdit = mysqli_query($config, "UPDATE level SET customer = '$customer' WHERE id='$idEdit'");
+        $queryEdit = mysqli_query($config, "UPDATE customer SET customer_name = '$customer_name' WHERE id='$idEdit'");
         header("Location: ?page=customer&edit=success");
         die;
     }
 } else if (isset($_POST['add'])) {
-    $level_name = $_POST['customer'];
+    $customer_name = $_POST['customer_name'];
     $phone  = $_POST['phone'];
     $address = $_POST['address'];
 
 
-    $queryAdd = mysqli_query($config, "INSERT INTO customer (level_name) VALUES ('$level_name')");
-    header("Location: ?page=level&add=success");
+    $queryAdd = mysqli_query($config, "INSERT INTO customer (customer_name, phone, address) VALUES ('$customer_name', '$phone', '$address')");
+    header("Location: ?page=customer&add=success");
     die;
 }
 
-$queryLevel = mysqli_query($config, "SELECT * FROM customer");
+$querycustomer = mysqli_query($config, "SELECT * FROM customer");
+$rowcustomer = mysqli_fetch_all($querycustomer, MYSQLI_ASSOC);
+
 ?>
 
-<div class="card shadow">
-    <div class="card-header">
-        <h3><?= isset($_GET['edit']) ? 'Edit' : 'Add' ?> Customer</h3>
-    </div>
-    <div class="card-body">
-        <form action="" method="post">
-            <div class="row">
-                <div class="col-sm-6 mb-3">
-                    <label for="customer" class="form-label">Customer</label>
-                    <select class="form-control" name="customer" id="">
-                        <option value=""> -- Add Level -- </option>
-                        <?php while ($rowLevel = mysqli_fetch_assoc($queryLevel)) : ?>
-                            <option value="<?= $rowLevel['id'] ?>"
-                                <?php isset($_GET['edit']) && ($rowLevel['customer'] == $rowEdit['customer']) ? 'selected' : '' ?>>
-                                <?php $rowcustomer['customer'] ?></option>
-                        <?php endwhile ?>
-                    </select>
-                </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3><?= isset($_GET['edit']) ? 'Edit' : 'Add' ?> Customer</h3>
             </div>
-            <div class="" align="right">
-                <a href="?page=customer" class="btn btn-secondary">Back</a>
-                <button type="submit" class="btn btn-primary"
-                    name="<?php echo isset($_GET['edit']) ? 'edit' : 'add' ?>">
-                    <?php echo isset($_GET['edit']) ? 'Edit' : 'Add' ?>
-                </button>
+            <div class="card-body">
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="customer_name" class="form-label">Customer</label>
+                                <input type="text" name="customer_name" class="form-control" placeholder="enter your name" value="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">No Telpon</label>
+                                <input type="text" name="phone" class="form-control" placeholder="enter your phone" value="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <textarea type="text" name="address" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="" align="right">
+                        <a href="?page=customer" class="btn btn-secondary">Back</a>
+                        <button type="submit" class="btn btn-primary"
+                            name="<?php echo isset($_GET['edit']) ? 'edit' : 'add' ?>">
+                            <?php echo isset($_GET['edit']) ? 'Edit' : 'Add' ?>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>

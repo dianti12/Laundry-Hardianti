@@ -9,7 +9,7 @@ $queryData = mysqli_query($config, "SELECT * FROM type_of_service ORDER BY updat
     <div class="card-body">
         <?php include 'admin/controller/alert-data-crud.php' ?>
         <div align="right" class="button-action">
-            <a href="?page=add-service" class="btn btn-primary"><i class='bx bx-plus'></i></a>
+            <a href="?page=add-service" class="btn btn-primary">Add Service<i class='bx bx-plus'></i></a>
         </div>
         <table class="table table-bordered table-striped table-hover table-responsive mt-3">
             <thead>
@@ -34,13 +34,13 @@ $queryData = mysqli_query($config, "SELECT * FROM type_of_service ORDER BY updat
                         <td>
                             <a href="?page=add-service&edit=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-secondary">
-                                    <i class="tf-icon bx bx-edit bx-22px"></i>
+                                    <i class="tf-icon bx bx-edit bx-22px">Edit</i>
                                 </button>
                             </a>
                             <a onclick="return confirm ('Apakah anda yakin akan menghapus data ini?')"
                                 href="?page=add-service&delete=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-danger">
-                                    <i class="tf-icon bx bx-trash bx-22px"></i>
+                                    <i class="tf-icon bx bx-trash bx-22px">Delete</i>
                                 </button>
                             </a>
                         </td>

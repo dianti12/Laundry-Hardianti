@@ -6,7 +6,7 @@ ob_clean();
 require_once 'admin/controller/koneksi.php';
 require_once 'admin/controller/functions.php';
 if (empty($_SESSION['id'])) {
-    header('Location: admin/controller/logout.php');
+    header('Location: logout.php');
 }
 
 // getting account data
@@ -105,7 +105,7 @@ $rowNav  = mysqli_fetch_array($queryNav);
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="./logout.php">Logout</a>
                 </div>
             </div>
         </div>

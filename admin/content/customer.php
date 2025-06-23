@@ -29,11 +29,11 @@ $queryData = mysqli_query($config, "SELECT * FROM customer ORDER BY customer_nam
                 while ($rowData = mysqli_fetch_assoc($queryData)) : ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= isset($rowData['cutomer_name']) ? $rowData['cutomer_name'] : '-' ?></td>
-                        <td><?= isset($rowData['phone']) ? $rowData['phone'] : '-' ?></td>
-                        <td><?= isset($rowData['address']) ? $rowData['address'] : '-' ?></td>
-                        <td><?= isset($rowData['action']) ? $rowData['action'] : '-' ?></td>
-                        <td>
+                        <td><?= isset($rowData['customer_name']) ? $rowData['customer_name'] : '' ?></td>
+                        <td><?= isset($rowData['phone']) ? $rowData['phone'] : '' ?></td>
+                        <td><?= isset($rowData['address']) ? $rowData['address'] : '' ?></td>
+                        <td><?= isset($rowData['action']) ? $rowData['action'] : '' ?>
+
                             <a href="?page=add-customer&edit=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-secondary">
                                     <i class="tf-icon bx bx-edit bx-22px">Edit</i>
@@ -45,6 +45,7 @@ $queryData = mysqli_query($config, "SELECT * FROM customer ORDER BY customer_nam
                                     <i class="tf-icon bx bx-trash bx-22px">Delete</i>
                                 </button>
                             </a>
+
                         </td>
                     </tr>
                 <?php endwhile; // End While 
