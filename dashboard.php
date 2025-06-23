@@ -51,6 +51,7 @@ $rowNav  = mysqli_fetch_array($queryNav);
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -68,7 +69,11 @@ $rowNav  = mysqli_fetch_array($queryNav);
                             include 'admin/content/dashboard.php';
                         }
                         ?>
+
                     </div>
+
+
+
                 </div>
                 <!-- /.container-fluid -->
             </div>
@@ -128,7 +133,7 @@ $rowNav  = mysqli_fetch_array($queryNav);
     <!-- Page level custom scripts -->
     <script src="tmp/js/demo/chart-area-demo.js"></script>
     <script src="tmp/js/demo/chart-pie-demo.js"></script>
-
+    <?php include 'admin/inc/script.php' ?>
 </body>
 
 </html>

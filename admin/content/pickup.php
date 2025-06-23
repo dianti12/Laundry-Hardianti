@@ -40,16 +40,16 @@ $queryData = mysqli_query($config, "SELECT trans_order.*, customer.customer_name
                             <a href="?page=add-pickup&view=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-secondary">
                                     <?php if ($rowData['order_status'] == 0) : ?>
-                                        <i class="tf-icon bx bx-package bx-22px"></i>
+                                        <i class="tf-icon bx bx-package bx-22px">View</i>
                                     <?php elseif ($rowData['order_status'] == 1) : ?>
-                                        <i class="tf-icon bx bx-show bx-22px"></i>
+                                        <i class="tf-icon bx bx-show bx-22px">view</i>
                                     <?php endif ?>
                                 </button>
                             </a>
                             <?php if ($rowData['order_status'] == 1) : ?>
                                 <a href="content/misc/print.php?order=<?= $rowData['id'] ?>" target="_blank">
                                     <button class="btn btn-secondary">
-                                        <i class="tf-icon bx bx-printer bx-22px"></i>
+                                        <i class="tf-icon bx bx-printer bx-22px">Print</i>
                                     </button>
                                 </a>
                             <?php endif ?>

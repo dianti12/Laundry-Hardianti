@@ -10,7 +10,7 @@ if (mysqli_num_rows($getOrderCodeQuery) > 0) {
 } else {
     $orderCodeID = 0;
 }
-$orderCode = "ANJAY-" . date('YmdHis') . $orderCodeID + 1;
+$orderCode = "orderlaundry" . date('YmdHis') . $orderCodeID + 1;
 
 if (isset($_POST['add_order'])) {
     $id_customer = $_POST['id_customer'];
@@ -53,7 +53,6 @@ if (isset($_POST['add_order'])) {
     header("Location:?page=order&delete=success");
     die;
 }
-
 
 $queryService = mysqli_query($config, "SELECT * FROM type_of_service");
 $queryCustomer = mysqli_query($config,  "SELECT * FROM customer");
@@ -182,11 +181,11 @@ $queryCustomer = mysqli_query($config,  "SELECT * FROM customer");
                         </select>
                     </div>
                     <div class="col-sm-6 mb-3">
-                        <label for="" class="form-label">Order Date</label>
+                        <label for="" class="form-label">Start Order Date</label>
                         <input type="date" class="form-control" name="order_date">
                     </div>
                     <div class="col-sm-6 mb-3">
-                        <label for="" class="form-label">Order Date</label>
+                        <label for="" class="form-label">End Order Date</label>
                         <input type="date" class="form-control" name="order_end_date">
                     </div>
 
@@ -214,8 +213,8 @@ $queryCustomer = mysqli_query($config,  "SELECT * FROM customer");
                 </div>
                 <hr>
                 <div class="mb-3" align="right">
-                    <button class="btn btn-secondary" id="add_row_order">
-                        <i class="bx bx-plus">Add</i>
+                    <button class="btn btn-primary" id="add_row_order">
+                        <i class="btn btn-primary"> Add row order</i>
                     </button>
                 </div>
                 <table class="table table-responsive table-bordered table-striped mb-3">
@@ -242,7 +241,7 @@ $queryCustomer = mysqli_query($config,  "SELECT * FROM customer");
                 </table>
                 <input type="hidden" name="order_status" value="0">
                 <div align="right">
-                    <a href="?page=order" class="btn btn-secondary">Back</a>
+                    <!-- <a href="?page=order" class="btn btn-secondary">Back</a> -->
                     <button class="btn btn-primary" type="submit" name="add_order">Add</button>
                 </div>
             </div>
