@@ -108,12 +108,12 @@ if (isset($_GET['clear'])) {
                                     <i class="tf-icon bx bx-show bx-22px">View</i>
                                 </button>
                             </a>
-                            <a onclick="return confirm ('Apakah anda yakin akan menghapus data ini?')"
+                            <button onclick="return confirm ('Apakah anda yakin akan menghapus data ini?')"
                                 href="?page=add-report&delete=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-danger btn-sm">
                                     <i class="tf-icon bx bx-trash bx-22px">Delete</i>
                                 </button>
-                            </a>
+                                </a>
                         </td>
                     </tr>
                 <?php endwhile; // End While 

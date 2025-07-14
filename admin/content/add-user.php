@@ -64,7 +64,7 @@ $queryLevel = mysqli_query($config, "SELECT * FROM level");
                     </select>
                 </div>
                 <div class="col-sm-6 form-group mb-3 form-password-toggle">
-                    <label for="" class="form-label">Old Password</label>
+                    <label for="" class="form-label">Password</label>
                     <div class="input-group input-group-merge">
                         <input type="password" id="password" class="form-control" name="password"
                             placeholder="Enter password" aria-describedby="password" />

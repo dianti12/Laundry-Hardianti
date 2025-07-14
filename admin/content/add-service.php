@@ -50,7 +50,7 @@ $rowtype_of_service = mysqli_fetch_all($querytype_of_service, MYSQLI_ASSOC);
                                 <input type="text" name="service_name" class="form-control" placeholder="enter your service name" value="">
                             </div>
                             <div class="mb-3">
-                                <label for="price" class="form-label">Price per Kilo</label>
+                                <label for="price" class="form-label">Price (gram)</label>
                                 <input type="number" name="price" class="form-control" placeholder="enter price" value="">
                             </div>
                             <div class="mb-3">

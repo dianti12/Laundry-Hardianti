@@ -5,10 +5,10 @@ require_once 'admin/controller/koneksi.php';
 // Fungsi untuk meng-handle proses login
 function loginController($email, $password)
 {
-    global $config; // Menggunakan variabel koneksi global
+    global $connection; // Menggunakan variabel koneksi global
 
     // Query untuk mencari data user berdasarkan email yang tidak dihapus (deleted_at = 0)
-    $queryLogin = mysqli_query($config, "SELECT * FROM user WHERE email='$email' AND deleted_at=0");
+    $queryLogin = mysqli_query($connection, "SELECT * FROM user WHERE email='$email' AND deleted_at=0");
 
     // Mengecek apakah ada data user yang ditemukan
     if (mysqli_num_rows($queryLogin) > 0) {
@@ -42,17 +42,24 @@ function loginValidation()
 }
 
 // Fungsi untuk mengubah nilai status order menjadi label HTML
-function getOrderStatus($status)
+// Letakkan fungsi ini di file koneksi.php atau file fungsi utama Anda
+
+
+// ... ini adalah kode koneksi database Anda yang sudah ada ...
+// ... mysqli_connect(...) ...
+
+
+// ===============================================================
+// PASTE FUNGSI LENGKAP INI DI DALAM FILE koneksi.php ANDA
+// ===============================================================
+function getOrderStatus($status_code)
 {
-    switch ($status) {
+    switch ($status_code) {
         case 0:
-            // Jika status 0, maka tampilkan label "New"
-            return '<span class="badge bg-label-warning">New</span>';
+            return '<span class="badge bg-primary">Baru</span>';
         case 1:
-            // Jika status 1, maka tampilkan label "Picked Up"
-            return '<span class="badge bg-label-success">Picked Up</span>';
+            return '<span class="badge bg-info">Selesai</span>';
         default:
-            // Jika status tidak dikenal, tampilkan "Unknown Status"
-            return '<span class="badge bg-label-secondary">Unknown Status</span>';
+            return '<span class="badge bg-secondary">Tidak Diketahui</span>';
     }
 }

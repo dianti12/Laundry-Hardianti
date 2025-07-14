@@ -11,12 +11,12 @@ $queryData = mysqli_query($config, "SELECT trans_order.*, customer.customer_name
     <div class="card-body">
         <?php include 'admin/controller/alert-data-crud.php' ?>
         <div align="right" class="button-action">
-            <a href="?page=add-order" class="btn btn-primary btn-sm"><i class='bx bx-plus'>Add Order</i></a>
+            <a href="?page=add-order" class="btn btn-primary btn-sm"><i class='bx bx-plus'>Tambah Order</i></a>
         </div>
         <table class="table table-bordered table-striped table-hover table-responsive mt-3">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>#</th>
                     <th>Order Code</th>
                     <th>Customer Name</th>
                     <th>Order Start Date</th>
@@ -55,7 +55,5 @@ $queryData = mysqli_query($config, "SELECT trans_order.*, customer.customer_name
                 ?>
             </tbody>
         </table>
-        <div class="mt-4" align="right">
-        </div>
     </div>
 </div>

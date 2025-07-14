@@ -12,13 +12,15 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">SISTEM INFORMASI LAUNDRY </div>
     </a>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Start Menu Admin -->
     <?php if ($dataNavbar['id_level'] == 1) : ?>
+        <!-- //Jika parameter page belum diset atau nilainya adalah 'dashboard', maka cetak 'active',
+kalau tidak, cetak string kosong. -->
         <li class="nav-item active <?= !isset($_GET['page']) || ($_GET['page'] == 'dashboard') ? 'active' : '' ?>">
             <a class="nav-link" href="?page=dashboard">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -38,6 +40,7 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Master Data:</h6>
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'user' || $_GET['page'] == 'add-user')) ? 'active' : '' ?>" href="?page=user">User</a>
+                    <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'user' || $_GET['page'] == 'add-user')) ? 'active' : '' ?>" href="?page=transaksi-baru">Transaksi Baru</a>
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'level' || $_GET['page'] == 'add-level')) ? 'active' : '' ?>" href="?page=level">Level</a>
                     <a class="collapse-item" <?= (isset($_GET['page']) && ($_GET['page'] == 'customer' || $_GET['page'] == 'add-customer')) ? 'active' : '' ?> href="?page=customer">Customer</a>
                     <a class="collapse-item" <?= (isset($_GET['page']) && ($_GET['page'] == 'service' || $_GET['page'] == 'add-service')) ? 'active' : '' ?> href="?page=service">Service</a>
@@ -59,6 +62,7 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Master Data:</h6>
+
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'order' || $_GET['page'] == 'add-order')) ? 'active' : '' ?>" href="?page=order">Order</a>
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'pickup' || $_GET['page'] == 'add-pickup')) ? 'active' : '' ?>" href="?page=pickup">Pickup</a>
                 </div>

@@ -48,15 +48,15 @@ $rowcustomer = mysqli_fetch_all($querycustomer, MYSQLI_ASSOC);
                         <div class="col-sm-6">
                             <div class="mb-3">
                                 <label for="customer_name" class="form-label">Customer</label>
-                                <input type="text" name="customer_name" class="form-control" placeholder="enter your name" value="">
+                                <input type="text" name="customer_name" class="form-control" placeholder="enter your name" value="<?php echo isset($_GET['edit']) ? $rowEdit['customer_name'] : '' ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">No Telpon</label>
-                                <input type="text" name="phone" class="form-control" placeholder="enter your phone" value="">
+                                <input type="text" name="phone" class="form-control" placeholder="enter your phone" value="<?php echo isset($_GET['edit']) ? $rowEdit['phone'] : '' ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Address</label>
-                                <textarea type="text" name="address" class="form-control"></textarea>
+                                <textarea name="address" class="form-control"><?php echo isset($_GET['edit']) ? $rowEdit['address'] : '' ?></textarea>
                             </div>
                         </div>
                     </div>
