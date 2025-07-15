@@ -461,29 +461,22 @@ $queryCustomer = mysqli_query($config, "SELECT * FROM customer");
                         <label>Pilih Layanan</label>
                         <div class="services-grid">
                             <button type="button" class="service-card" onclick="addService('Cuci Kering', 5000)">
-                                <h3>🌪️ Cuci Kering</h3>
+                                <h3>🌪️ Cuci Gosong</h3>
                                 <div class="price">Rp 5.000/kg</div>
                             </button>
                             <button type="button" class="service-card" onclick="addService('Cuci Setrika', 7000)">
-                                <h3>👔 Cuci Setrika</h3>
-                                <div class="price">Rp 7.000/kg</div>
+                                <h3>👔 Hanya Cuci</h3>
+                                <div class="price">Rp 4.500/kg</div>
                             </button>
                             <button type="button" class="service-card" onclick="addService('Setrika Saja', 3000)">
                                 <h3>🔥 Setrika Saja</h3>
-                                <div class="price">Rp 3.000/kg</div>
+                                <div class="price">Rp 5.000/kg</div>
                             </button>
                             <button type="button" class="service-card" onclick="addService('Dry Clean', 15000)">
-                                <h3>✨ Dry Clean</h3>
-                                <div class="price">Rp 15.000/kg</div>
+                                <h3>✨ Laundry Besar (selimut, karpet, mantel, dan sprei mylove)</h3>
+                                <div class="price">Rp 7.000/kg</div>
                             </button>
-                            <button type="button" class="service-card" onclick="addService('Cuci Sepatu', 25000)">
-                                <h3>👟 Cuci Sepatu</h3>
-                                <div class="price">Rp 25.000/pasang</div>
-                            </button>
-                            <button type="button" class="service-card" onclick="addService('Cuci Karpet', 20000)">
-                                <h3>🏠 Cuci Karpet</h3>
-                                <div class="price">Rp 20.000/m²</div>
-                            </button>
+
                         </div>
                     </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2025 at 03:31 AM
+-- Generation Time: Jul 15, 2025 at 04:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,6 +77,20 @@ INSERT INTO `level` (`id`, `level_name`, `created_at`, `updated_at`, `deleted_at
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `id` int(100) NOT NULL,
+  `total_transaksi` int(100) NOT NULL,
+  `total_pendapatan` int(100) NOT NULL,
+  `pesanan_aktif` int(100) NOT NULL,
+  `pesanan_selesai` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `trans_laundry_pickup`
 --
 
@@ -128,10 +142,7 @@ CREATE TABLE `trans_order` (
 --
 
 INSERT INTO `trans_order` (`id`, `id_customer`, `order_code`, `order_date`, `order_end_date`, `order_status`, `total_price`, `order_pay`, `order_change`, `notes`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(58, 27, 'LNDRY-202506260412051', '2025-06-26', '2025-06-26', 1, 30, 35, 5, NULL, '2025-06-26 02:13:17', '2025-06-26 02:37:12', 0),
-(61, 32, 'LNDRY-2025062605033061', '2025-06-18', '2025-06-20', 1, 140, 150, 10, NULL, '2025-06-26 03:04:16', '2025-06-26 03:05:30', 0),
-(62, 33, 'LNDRY-2025062606372662', '2025-06-26', '2025-06-27', 0, 23, NULL, NULL, NULL, '2025-06-26 04:38:05', '2025-06-26 04:38:05', 0),
-(63, 33, 'LNDRY-2025062606380863', '2025-06-26', '2025-06-26', 0, 5, NULL, NULL, NULL, '2025-06-26 04:38:27', '2025-06-26 04:38:27', 0);
+(61, 32, 'LNDRY-2025062605033061', '2025-06-18', '2025-06-20', 1, 140, 150, 10, NULL, '2025-06-26 03:04:16', '2025-06-26 03:05:30', 0);
 
 -- --------------------------------------------------------
 
@@ -236,6 +247,12 @@ ALTER TABLE `level`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `trans_laundry_pickup`
 --
 ALTER TABLE `trans_laundry_pickup`
@@ -280,6 +297,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `level`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `trans_laundry_pickup`
