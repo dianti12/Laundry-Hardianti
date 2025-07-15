@@ -67,7 +67,7 @@ if (isset($_POST['login'])) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Laundry System</h1>
                                     </div>
                                     <form action="" method="POST" class="user">
                                         <div class="form-group">
@@ -90,12 +90,12 @@ if (isset($_POST['login'])) {
                                             Login
                                         </button>
                                         <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        </a> -->
+                                        <!-- <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+                                        </a> -->
                                     </form>
                                     <hr>
                                     <div class="text-center">

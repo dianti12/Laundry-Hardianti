@@ -40,7 +40,7 @@ kalau tidak, cetak string kosong. -->
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Master Data:</h6>
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'user' || $_GET['page'] == 'add-user')) ? 'active' : '' ?>" href="?page=user">User</a>
-                    <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'user' || $_GET['page'] == 'add-user')) ? 'active' : '' ?>" href="?page=transaksi-baru">Transaksi Baru</a>
+
                     <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'level' || $_GET['page'] == 'add-level')) ? 'active' : '' ?>" href="?page=level">Level</a>
                     <a class="collapse-item" <?= (isset($_GET['page']) && ($_GET['page'] == 'customer' || $_GET['page'] == 'add-customer')) ? 'active' : '' ?> href="?page=customer">Customer</a>
                     <a class="collapse-item" <?= (isset($_GET['page']) && ($_GET['page'] == 'service' || $_GET['page'] == 'add-service')) ? 'active' : '' ?> href="?page=service">Service</a>
@@ -62,9 +62,8 @@ kalau tidak, cetak string kosong. -->
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Master Data:</h6>
+                    <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'transaksi' || $_GET['page'] == 'add-transaksi')) ? 'active' : '' ?>" href="?page=transaksi">Transaksi Baru</a>
 
-                    <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'order' || $_GET['page'] == 'add-order')) ? 'active' : '' ?>" href="?page=order">Order</a>
-                    <a class="collapse-item <?= (isset($_GET['page']) && ($_GET['page'] == 'pickup' || $_GET['page'] == 'add-pickup')) ? 'active' : '' ?>" href="?page=pickup">Pickup</a>
                 </div>
             </div>
         </li>
