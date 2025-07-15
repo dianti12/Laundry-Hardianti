@@ -575,6 +575,8 @@ $queryCustomer = mysqli_query($config, "SELECT * FROM customer");
             <button class="btn btn-danger" onclick="clearCart()" style="margin: 0 10px;">
                 🗑️ Bersihkan Keranjang
             </button>
+            <a href="?page=transaksi" class="btn btn-success w-10">Halaman Transaksi</a>
+
         </div>
     </div>
 

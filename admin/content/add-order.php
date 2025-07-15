@@ -162,7 +162,7 @@ $queryCustomer = mysqli_query($config, "SELECT * FROM customer");
                 </tfoot>
             </table>
             <div class="mt-3 gap-3" align="right">
-                <a href="?page=order" class="btn btn-secondary">Back</a>
+                <a href="?page=transaksi" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </div>
